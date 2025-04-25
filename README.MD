@@ -5,7 +5,15 @@
  - install JDK 17 or higher on your machine
  - add `local.properties` file to the project root and set a path to Android SDK there
  - add `ApiConstants.kt` file to the project `/composeApp/src/commonMain/kotlin/com/rkbapps/imagesearch/network/ApiConstants.kt` package and set your API key there"
+ kotlin
+ - ```kotlin
+   package com.rkbapps.imagesearch.network
 
+   object ApiConstants {
+       const val API_KEY = "YOUR_API_KEY"
+       const val BASE_URL = "https://api.pexels.com/v1/"
+   }
+    ```
 ### Android
 To run the application on android device/emulator:  
  - open project in Android Studio and run imported android run configuration
