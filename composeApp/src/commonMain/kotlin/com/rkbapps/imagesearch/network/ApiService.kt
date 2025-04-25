@@ -9,7 +9,7 @@ import io.ktor.client.request.parameter
 class ApiService(
     private val client: HttpClient
 ) {
-    suspend fun getImages(perPage: Int = PER_PAGE_ITEMS,page:Int=1): NetworkResponse<Images> {
+    suspend fun getImages(perPage: Int = PER_PAGE_ITEMS, page: Int = 1): NetworkResponse<Images> {
         return safeRequest<Images> {
             val response = client.get(urlString = "curated") {
                 parameter("per_page", perPage)
@@ -19,7 +19,7 @@ class ApiService(
         }
     }
 
-    companion object{
+    companion object {
         const val PER_PAGE_ITEMS = 30
     }
 

@@ -22,6 +22,7 @@ class HomeScreenViewModel(
             repository.loadImages()
         }
     }
+
     val paginatedImages = repository.paginatedImages().cachedIn(viewModelScope)
 
 }

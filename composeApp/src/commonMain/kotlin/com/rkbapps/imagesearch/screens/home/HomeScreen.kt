@@ -186,14 +186,14 @@ fun HomeScreen(
 }
 
 @Composable
-fun ErrorView(message: String, onClickRetry: ()->Unit, modifier: Modifier) {
-    Box (modifier=modifier, contentAlignment = Alignment.Center){
-        Column (horizontalAlignment = Alignment.CenterHorizontally){
+fun ErrorView(message: String, onClickRetry: () -> Unit, modifier: Modifier) {
+    Box(modifier = modifier, contentAlignment = Alignment.Center) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(message, color = Color.Red)
             OutlinedButton(
                 onClick = onClickRetry,
                 shape = RoundedCornerShape(8.dp)
-            ){
+            ) {
                 Text("Try Again")
             }
         }

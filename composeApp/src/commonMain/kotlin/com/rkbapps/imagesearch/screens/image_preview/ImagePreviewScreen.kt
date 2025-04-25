@@ -47,7 +47,7 @@ fun ImagePreviewScreen(navController: NavHostController, uri: String) {
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(),
                 loading = {
-                    CircularProgressIndicator(modifier = Modifier.size(50.dp),)
+                    CircularProgressIndicator(modifier = Modifier.size(50.dp))
                 }
             )
         }

@@ -52,7 +52,7 @@ class ApiClient {
                 level = LogLevel.ALL
                 logger = object : Logger {
                     override fun log(message: String) {
-                        Log.d("API Client",message)
+                        Log.d("API Client", message)
                     }
                 }
             }
