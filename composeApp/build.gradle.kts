@@ -66,6 +66,7 @@ kotlin {
             implementation(libs.ktor.client.serialization)
             implementation(libs.ktor.client.serialization.kotlinx)
             implementation(libs.ktor.client.logging)
+            implementation(libs.ktor.network)
 
             //koin di
             implementation(libs.koin.core)

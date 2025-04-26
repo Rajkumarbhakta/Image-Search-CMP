@@ -25,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -111,7 +112,7 @@ fun HomeScreen(
             ) {
                 items(paginatedImages.itemCount) {
                     paginatedImages[it]?.src?.let { imageLinks ->
-                        ImageItem(imageLinks.large!!) {
+                        ImageItem(imageLinks.large2x!!) {
                             navController.navigate(route = Routes.ImagePreview(url = imageLinks.original!!))
                         }
                     }
@@ -208,8 +209,11 @@ fun ImageItem(url: String, onCLick: () -> Unit = {}) {
         modifier = Modifier.clip(RoundedCornerShape(8.dp)).clickable {
             onCLick()
         },
+        contentScale = ContentScale.Crop,
         loading = {
-            CircularProgressIndicator(modifier = Modifier.size(50.dp))
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                CircularProgressIndicator(modifier = Modifier.size(50.dp))
+            }
         }
     )
 }
